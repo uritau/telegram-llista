@@ -60,11 +60,16 @@ def show(bot, update):
   update.message.reply_text('T\'hi afegeixes USER_LIST: {} ---- {} ID: {} ?'.format(user_list, user['username'], user['id']), reply_markup=reply_markup)
   
 
+def new_list(bot, update):
+      print("test")
+
 start_handler = CommandHandler('start', start)
 add_member_handler = CommandHandler('add_member', add_member)
 del_member_handler = CommandHandler('del_member', del_member)
 show_handler = CommandHandler('show', show)
+new_list_handler = CommandHandler('new_list', new_list)
 
+dispatcher.add_handler(new_list_handler)
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(add_member_handler)
 dispatcher.add_handler(del_member_handler)
